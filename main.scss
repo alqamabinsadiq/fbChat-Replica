@@ -1,0 +1,179 @@
+@import './tooltip.scss';
+@import './_titleBar';
+@import './_chatBox';
+
+@mixin iconBottomstyle{
+    color: grey;
+    margin-left: 8px;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    vertical-align: top;
+    &:hover{
+        color:lighten(grey, 10);}
+}
+
+body{
+    font-family: sans-serif;
+    background: transparent;
+
+}
+div{
+    display: block;
+}
+
+.container{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 10px;
+    margin-right: 200px;
+        .ParentLayout {
+        background: transparent; 
+        border: 0;
+        border-radius: 3px 3px 0 0;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
+        position: relative;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        width: 300px;
+        max-width: 300px;
+        max-height: 400px;
+        height: 380px;
+    }
+}
+
+.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+}
+
+.TypeTextContainer{
+    background: #fff;
+    min-height: 32px;
+    cursor: pointer;
+    outline: none;
+    overflow: hidden;
+    padding: 5px;
+    border: 1px solid darken(#eee, 3);
+    padding-bottom: 25px;
+    position: relative;
+    height: 30px;
+                    textarea{
+                    box-sizing:border-box;
+                    width:100%;
+                    line-height:1.5;
+                    transition:box-shadow 0.5s ease;
+                    border-top: 1px solid #c9d0da;
+                    border-top-width: 1px;
+                    resize: none;
+                    overflow: auto;
+                    outline: none;
+                    display: block;
+                    border: 0;
+                    height: 30px;
+                    
+                }
+                    textarea::-webkit-input-placeholder{
+                            color: darken(#eee,5);
+                        }
+}
+
+.IconHolder{
+    margin: 2px;
+    margin-left:-1px;
+    display: block;
+
+}
+
+.fa-picture-o,.fa-sticky-note-o,.fa-smile-o,.fa-paperclip,.fa-camera-retro,.fa-calendar-plus-o {
+    @include iconBottomstyle;
+}
+.fa-picture-o{
+    margin-left: 3px;
+}
+.fa-thumbs-o-up{
+    color:lighten(blue,30);
+    margin-left: 5px;
+    height: 20px;
+    width: 20px;
+    vertical-align: top;
+    float: right;}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: -115px;
+    top: 30px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border: 1px solid #eee;
+}
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: grey}
+
+@mixin showSetting{
++.dropdown-content {
+    display: block;
+    transition-duration: 100s;}
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover {
+    @include showSetting;
+} 
+
+//Mixin for tooltip arrow
+@mixin tooltipArrow($left){
++ .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: $left;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+}
+/* Show the tooltip text when you mouse over the tooltip container */
+.addPeopletooltip:hover
+{
+    @include tooltipArrow(10%);}
+.videoTootip:hover{
+   @include tooltipArrow(30%);
+}
+.callTooltip:hover{
+    @include tooltipArrow(50%);
+}
+.closeTooltip:hover{
+    @include tooltipArrow(85%);
+}
+
+.fa.fa-circle{
+    height: 8px;
+    width: 8px;
+    font-size: 7px;
+    vertical-align:middle;
+    color: green;}

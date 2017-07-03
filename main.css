@@ -1,0 +1,337 @@
+/* Tooltip arrow */
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block; }
+
+/* Tooltip text */
+.tooltip + .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 101%;
+  padding: 5px;
+  font-size: 12px;
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 1s; }
+
+.tooltip:hover + .tooltiptext {
+  visibility: visible;
+  opacity: 1; }
+
+.titleBar {
+  background-color: #f8f8f8;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  outline: none;
+  overflow: hidden;
+  padding-left: 8px;
+  padding: 5px;
+  border-radius: 3px 3px 0 0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3); }
+  .titleBar:hover {
+    background-color: #eee; }
+  .titleBar:active {
+    background-color: #4b4f56; }
+    .titleBar:active .titleBarText {
+      color: white; }
+
+.titlebar .titlebarTextWrapper {
+  color: #4b4f56;
+  font-size: 12px;
+  line-height: 26px;
+  margin: 0 8px 3px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+
+.titlebarTextWrapper {
+  width: 150px; }
+
+.titleBarText {
+  color: #4b4f56; }
+
+.myIcon .button {
+  display: inline-block;
+  height: 26px;
+  margin-right: 1px;
+  vertical-align: top; }
+
+.fa-plus, .fa-phone, .fa-video-camera, .fa-times, .fa-cog {
+  color: grey;
+  margin-left: 5px;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  vertical-align: top;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end; }
+  .fa-plus:hover, .fa-phone:hover, .fa-video-camera:hover, .fa-times:hover, .fa-cog:hover {
+    color: #cdcdcd; }
+
+.fa-times {
+  font-weight: 50; }
+
+.iconContainer {
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  outline: none;
+  overflow: hidden;
+  justify-content: flex-end; }
+
+.ChatBox {
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: auto;
+  max-height: 286px; }
+
+ul {
+  padding: 0;
+  list-style-type: none; }
+
+ul.ChatBox {
+  list-style: none; }
+
+.ChatBox__avatar {
+  flex-shrink: 0;
+  flex-grow: 0;
+  z-index: 1;
+  height: 40px;
+  width: 40px;
+  border-radius: 25px; }
+
+.ChatBox__start {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  max-width: 100%; }
+
+.ChatBox__message {
+  margin-top: 5px;
+  font-size: 12px;
+  background-color: #f3f3f3;
+  padding: .5em;
+  border-radius: 12px;
+  font-weight: lighter;
+  max-width: 70%; }
+
+.ChatBox__start.ChatBox__start_mine {
+  flex-direction: row-reverse; }
+
+.ChatBox__start .ChatBox__message::before {
+  margin-top: 5px;
+  position: absolute;
+  right: auto;
+  bottom: .6em;
+  left: -12px;
+  height: 0;
+  content: '';
+  border-right-color: #ddd;
+  z-index: 2; }
+
+.ChatBox__message .ChatBox__timestamp {
+  display: none; }
+
+.ChatBox .ChatBox__start {
+  margin: .5em; }
+
+.ChatBox__start.ChatBox__start_mine
+.ChatBox__avatar {
+  display: none; }
+
+.ChatBox__start .ChatBox__message {
+  position: relative;
+  margin: 5px 0px 0px 5px; }
+
+.ChatBox__start.ChatBox__start_mine .ChatBox__message {
+  background-color: #373e4c;
+  color: #fff;
+  margin-top: -1px;
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px; }
+
+.ChatBox__start.ChatBox__start_mine .ChatBox__message::before {
+  right: -12px;
+  bottom: .6em;
+  left: auto;
+  border-left-color: #373e4c; }
+
+body {
+  font-family: sans-serif;
+  background: transparent; }
+
+div {
+  display: block; }
+
+.container {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 10px;
+  margin-right: 200px; }
+  .container .ParentLayout {
+    background: transparent;
+    border: 0;
+    border-radius: 3px 3px 0 0;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    width: 300px;
+    max-width: 300px;
+    max-height: 400px;
+    height: 380px; }
+
+.clearfix:after {
+  clear: both;
+  content: ".";
+  display: block;
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  visibility: hidden; }
+
+.TypeTextContainer {
+  background: #fff;
+  min-height: 32px;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  padding: 5px;
+  border: 1px solid #e6e6e6;
+  padding-bottom: 25px;
+  position: relative;
+  height: 30px; }
+  .TypeTextContainer textarea {
+    box-sizing: border-box;
+    width: 100%;
+    line-height: 1.5;
+    transition: box-shadow 0.5s ease;
+    border-top: 1px solid #c9d0da;
+    border-top-width: 1px;
+    resize: none;
+    overflow: auto;
+    outline: none;
+    display: block;
+    border: 0;
+    height: 30px; }
+  .TypeTextContainer textarea::-webkit-input-placeholder {
+    color: #e1e1e1; }
+
+.IconHolder {
+  margin: 2px;
+  margin-left: -1px;
+  display: block; }
+
+.fa-picture-o, .fa-sticky-note-o, .fa-smile-o, .fa-paperclip, .fa-camera-retro, .fa-calendar-plus-o {
+  color: grey;
+  margin-left: 8px;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  vertical-align: top; }
+  .fa-picture-o:hover, .fa-sticky-note-o:hover, .fa-smile-o:hover, .fa-paperclip:hover, .fa-camera-retro:hover, .fa-calendar-plus-o:hover {
+    color: #9a9a9a; }
+
+.fa-picture-o {
+  margin-left: 3px; }
+
+.fa-thumbs-o-up {
+  color: #9999ff;
+  margin-left: 5px;
+  height: 20px;
+  width: 20px;
+  vertical-align: top;
+  float: right; }
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block; }
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  right: -115px;
+  top: 30px; }
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border: 1px solid #eee; }
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: grey; }
+
+/* Show the dropdown menu on hover */
+.dropdown:hover + .dropdown-content {
+  display: block;
+  transition-duration: 100s; }
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.addPeopletooltip:hover + .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 10%;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent; }
+
+.videoTootip:hover + .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 30%;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent; }
+
+.callTooltip:hover + .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent; }
+
+.closeTooltip:hover + .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 85%;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent; }
+
+.fa.fa-circle {
+  height: 8px;
+  width: 8px;
+  font-size: 7px;
+  vertical-align: middle;
+  color: green; }
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,73 @@
+@mixin icon-style{
+    color: grey;
+    margin-left: 5px;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    vertical-align: top;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    &:hover{
+        color: lighten(grey,30);
+    }
+}
+.titleBar{
+    background-color: lighten(#eee,4);
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    outline: none;
+    overflow: hidden;
+    padding-left: 8px;
+    padding: 5px;
+    border-radius: 3px 3px 0 0;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
+        &:hover{
+            background-color:#eee;
+        }
+        &:active{
+            background-color:#4b4f56;
+            .titleBarText{
+                color: white;
+            }
+        }
+}
+.titlebar .titlebarTextWrapper {
+    color: #4b4f56;
+    font-size: 12px;
+    line-height: 26px;
+    margin: 0 8px 3px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.titlebarTextWrapper{
+    width: 150px;
+}
+.titleBarText{
+    //margin-left: 5px;
+    color: #4b4f56;
+}
+.myIcon .button{
+    display: inline-block;
+    height: 26px;
+    margin-right: 1px;
+    vertical-align: top;
+}
+.fa-plus, .fa-phone, .fa-video-camera, .fa-times, .fa-cog{
+    @include icon-style; 
+}
+.fa-times{
+    font-weight: 50;
+}
+
+.iconContainer {
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    outline: none;
+    overflow: hidden;
+    justify-content: flex-end;
+}
